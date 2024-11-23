@@ -12,7 +12,8 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddDbContext<AppDBContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    //opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    opt.UseSqlite(builder.Configuration.GetConnectionString("SQLiteConnection"));
 });
 
 builder.Services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme);
