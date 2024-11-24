@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using MudBlazor.Services;
 using TicketManagementUI.Components;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -29,14 +29,15 @@ builder.Services.ConfigureApplicationCookie(opt =>
 
 builder.Services.AddDbContext<AppDBContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    //opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    opt.UseSqlite(builder.Configuration.GetConnectionString("SQLiteConnection"));
 });
 
 builder.Services.AddScoped<IAccountService, AccountService>();
 
 builder.Services.AddMudServices();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
