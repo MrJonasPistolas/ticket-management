@@ -5,11 +5,11 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{459DC843-A8F1-4131-8C5C-7C3B608D5462}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{BD9BADDE-A0F6-4185-ACF1-CF9351F6F368}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain.csproj", "{BD9BADDE-A0F6-4185-ACF1-CF9351F6F368}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{C1183D21-AEF4-4F32-88A3-BF4DE76122BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{C1183D21-AEF4-4F32-88A3-BF4DE76122BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketManagementUI", "src\TicketManagementUI\TicketManagementUI.csproj", "{D9A0467F-9DEF-4E70-934A-4F88E112E0B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketManagementUI", "src\TicketManagementUI\TicketManagementUI.csproj", "{D9A0467F-9DEF-4E70-934A-4F88E112E0B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
