@@ -10,6 +10,9 @@
 @inject IAccountService accountService
 @inject SignInManager<User> signInManager
 @inject NavigationManager nav
+@inject EncryptionHelper<LoginDTO> encrypt
+
+@rendermode InteractiveServer
 
 <section class="vh-100">
     <div class="container-fluid h-custom">
@@ -65,8 +68,16 @@
             return;
         }
 
-        await signInManager.PasswordSignInAsync(verify.Value, Input.Password, Input.Remember, false);
-        nav.NavigateTo("/");
+        var loginData = new LoginDTO
+        {
+            Username = verify.Value,
+            Password = Input.Password,
+            RememberMe = Input.Remember
+        };
+
+        var payload = encrypt.Encode(loginData);
+
+        nav.NavigateTo($"/processor/{payload}");
     }
 
     private sealed class InputModel
